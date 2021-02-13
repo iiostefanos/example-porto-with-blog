@@ -1,12 +1,20 @@
-<h4>Test da blog</h4>
+{% extends 'porto/base.html' %}
+
+{% block content %}
+
+<h2>The blog</h2>
+
+<h3>Here were written only {{ blogs.count }} post{{ blogs.count|pluralize}}</h3>
 
 {% for blog in blogs %}
 
-<h2>{{ blog.title }}</h2>
-<h5> {{ blog.date }}</h5>
-<p>{{ blog.description }}</p>
+<a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+<h5> {{ blog.date|date:'d M Y' }}</h5>
+<p>{{ blog.description|truncatechars:50 }}</p>
 
 
 
 
 {% endfor %}
+
+{% endblock %}   
