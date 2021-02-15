@@ -10,6 +10,10 @@ body {
     font-family: 'Truculenta', sans-serif;
 }
 
+.navbar-nav { 
+            margin-left: auto; 
+        } 
+
 #blogtitle {
     font-size: 4rem;
 }
